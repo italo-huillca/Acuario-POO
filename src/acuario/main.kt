@@ -13,6 +13,9 @@ fun construirAcuario() {
     // todo personalizado
     val acuario4 = Acuario(ancho = 25, alto = 35, largo = 110)
     acuario4.imprimirTamano()
+    val acuario6 = Acuario(numeroDePeces = 29)
+    acuario6.imprimirTamano()
+    println("Volumen: ${acuario6.ancho * acuario6.largo * acuario6.alto / 1000} l")
 }
 
 
