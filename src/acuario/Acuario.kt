@@ -1,5 +1,5 @@
 package Acuario
-
+import kotlin.math.PI
 open class Acuario(open var largo: Int = 100,open var ancho: Int = 20,open var alto: Int = 40) {
     fun imprimirTamano() {
         println(forma)
@@ -29,3 +29,14 @@ open class Acuario(open var largo: Int = 100,open var ancho: Int = 20,open var a
         get() = volumen * 0.9
 }
 
+class TanqueTorre (override var alto: Int, var diametro: Int): Acuario(alto = alto, ancho = diametro, largo = diametro) {
+    override var volumen: Int
+        // área elíptica = π * r1 * r2
+        get() = (ancho/2 * largo/2 * alto / 1000 * PI).toInt()
+        set(valor) {
+            alto = ((valor * 1000 / PI) / (ancho/2 * largo/2)).toInt()
+        }
+
+    override var agua = volumen * 0.8
+    override val forma = "cilindro"
+}
