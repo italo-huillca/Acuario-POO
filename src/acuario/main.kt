@@ -3,6 +3,7 @@ import Acuario.Acuario
 
 fun construirAcuario() {
     val miAcuario = Acuario()
+    miAcuario.imprimirTamano()
 }
 
 fun main() {
